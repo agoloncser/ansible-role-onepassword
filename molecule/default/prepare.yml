@@ -3,7 +3,8 @@
   hosts: all
   gather_facts: "yes"
   tasks:
-    - name: update repos on debian
-      ansible.builtin.apt:
-        update_cache: "yes"
-      when: ansible_distribution == "Debian"
+    []
+    # - name: update repos on debian
+    #   ansible.builtin.apt:
+    #     update_cache: "yes"
+    #   when: ansible_distribution == "Debian"
