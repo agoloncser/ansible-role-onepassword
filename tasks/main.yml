@@ -1,0 +1,24 @@
+---
+# - name: variables
+#   include_tasks: variables.yml
+
+- name: add os specific repos
+  include_tasks: "{{ os_specific_repo_tasks_file }}"
+  with_first_found:
+    - files:
+        - >-
+          repo_{{ ansible_distribution }}-{{ ansible_distribution_major_version
+          }}.yml
+        - >-
+          repo_{{ ansible_distribution }}.yml
+        - >-
+          repo_{{ ansible_os_family }}.yml
+        - >-
+          repo_{{ ansible_system }}.yml
+      errors: ignore
+  loop_control:
+    loop_var: os_specific_repo_tasks_file
+
+- name: install
+  ansible.builtin.package:
+    name: 1password
