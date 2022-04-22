@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         python_version: ["3.8"]
-        experimental: [true]
+        experimental: [false]
         molecule_image:
           - agoloncser/docker-ansible-fedora32
           - agoloncser/docker-ansible-fedora33
