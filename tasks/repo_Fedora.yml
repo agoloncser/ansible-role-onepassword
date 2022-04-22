@@ -10,3 +10,4 @@
     repo_gpgcheck: "yes"
     gpgkey: >-
       https://downloads.1password.com/linux/keys/1password.asc
+  changed_when: false
