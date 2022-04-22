@@ -1,4 +1,12 @@
 ---
+- name: Create keyrings directory
+  file:
+    state: directory
+    path: /usr/share/keyrings
+    owner: root
+    group: root
+    more: "0755"
+
 - name: Get key
   get_url:
     url: https://downloads.1password.com/linux/keys/1password.asc
